@@ -1,0 +1,35 @@
+.horizontal-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px; /* optional spacing */
+}
+
+.list-column-right {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  padding-right: 100px;
+}
+
+.list-column-left {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  padding-left: 100px;
+}
+
+.column-header {
+  margin: 0 0 8px 0;
+  text-align: center;
+  font-weight: 600; /* tweak however you like */
+}
+
+.vertical-divider {
+  width: 2px;               /* thickness */
+  background-color: #ccc;    /* color of the line */
+  align-self: stretch;   
+  margin-top: 20px;
+  margin-bottom: 20px;    /* fill height of flex container */
+}

@@ -1,0 +1,33 @@
+.reading-card {
+  padding: 16px;
+  height: 400px;           /* total card height */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.card-content {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;        /* make left and right same height */
+  flex: 1;                     /* fill remaining height of card */
+  overflow: hidden;            /* hide overflow so children handle scroll */
+}
+
+.text-area {
+  flex: 1;                     /* fill remaining space */
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;             /* scroll if content exceeds visible area */
+  padding-right: 4px;           /* optional spacing to avoid scrollbar overlap */
+}
+
+.full-tile-textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 8px;      /* optional */
+  resize: none;      /* optional */
+  overflow: auto;    /* or hidden if you prefer */
+}

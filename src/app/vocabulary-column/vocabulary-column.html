@@ -1,0 +1,8 @@
+<mat-list>
+    @for (word of column; track word) {
+        <mat-list-item>{{ word }}</mat-list-item>
+        @if ($index < column.length - 1) {
+            <mat-divider></mat-divider>
+        }
+    }
+</mat-list>

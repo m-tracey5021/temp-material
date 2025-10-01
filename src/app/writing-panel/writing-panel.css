@@ -1,0 +1,27 @@
+.map-card {
+  margin-bottom: 16px;
+  padding: 8px;
+  margin: 8px;
+}
+
+.full-tile-textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 8px;      /* optional */
+  resize: none;      /* optional */
+  overflow: auto;    /* or hidden if you prefer */
+}
+
+
+.left-align-tile {
+  display: flex;
+  flex-direction: column;    /* stack items vertically */
+  justify-content: center;   /* center vertically */
+  align-items: flex-start;   /* left-align horizontally */
+  height: 100%;              /* fill the tile height */
+  width: 100%;               /* fill the tile width */
+  padding: 8px;              /* optional padding */
+  box-sizing: border-box;    /* include padding in width/height */
+}
+

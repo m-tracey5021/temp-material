@@ -1,0 +1,25 @@
+<mat-card class="reading-card">
+  <div class="card-content">
+    <!-- Left: horizontal text -->
+    <div class="text-area">
+      <span>
+        @for (word of passage; track word) {
+          <div (click)="onWordClick(word)" class="word-btn">
+            <span class="word-inner">{{ word }}</span>
+          </div>
+        }
+      </span>
+    </div>
+
+    <!-- Right: vertical scrollable list -->
+    @if (isReviewMode) {
+      <mat-card class="vertical-card">
+        @for (word of toReview; track word) {
+          <div class="vertical-word" (click)="onWordClick(word)">
+            {{ word }}
+          </div>
+        }
+      </mat-card>
+    }
+  </div>
+</mat-card>

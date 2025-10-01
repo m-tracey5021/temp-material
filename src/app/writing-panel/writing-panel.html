@@ -1,0 +1,37 @@
+<mat-card class="map-card">
+
+    @for (entry of answerMap | keyvalue; track entry.key) {
+        
+        <mat-grid-list cols="8" rowHeight="50px" gutterSize="4px">
+
+
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+                {{ $index + 1 }}
+            </mat-grid-tile>
+
+
+            <mat-grid-tile [colspan]="7" [rowspan]="1">
+                <div class="left-align-tile">
+                    {{ entry.key }}
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="7" [rowspan]="2">
+            <div class="left-align-tile">
+                <textarea
+                    matInput
+                    class="full-tile-textarea"
+                    [(ngModel)]="entry.value"
+                    (ngModelChange)="answerMap.set(entry.key, $event)">
+                </textarea>
+            </div>
+
+            </mat-grid-tile>
+
+        </mat-grid-list>
+
+    }
+</mat-card>

@@ -1,0 +1,70 @@
+/* Outer card: fixed height for scrollable content */
+.reading-card {
+  padding: 16px;
+  max-height: 400px;           /* total card height */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+/* Flex container for side-by-side layout */
+.card-content {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;        /* make left and right same height */
+  flex: 1;                     /* fill remaining height of card */
+  overflow: hidden;            /* hide overflow so children handle scroll */
+}
+
+/* Left text area: scrollable */
+.text-area {
+  flex: 1;                     /* fill remaining space */
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;             /* scroll if content exceeds visible area */
+  padding-right: 4px;           /* optional spacing to avoid scrollbar overlap */
+}
+
+/* Horizontal word styling */
+.word-btn {
+  margin-right: 4px;
+  padding: 0;
+  min-width: unset;
+  display: inline-block;
+  line-height: inherit;
+  background: none;
+}
+
+.word-inner {
+  padding: 0 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.word-inner:hover {
+  background: rgba(201, 104, 120, 0.1);
+}
+
+/* Right vertical card: scrollable, same visible height as text area */
+.vertical-card {
+  width: 200px;                /* fixed width */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;            /* scroll independently if content too tall */
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Vertical word styling */
+.vertical-word {
+  padding: 2px 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.vertical-word:hover {
+  background: rgba(201, 104, 120, 0.1);
+}

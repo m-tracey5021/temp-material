@@ -1,0 +1,18 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.toggle-button {
+  display: flex;
+  justify-content: end; /* horizontal centering */
+  align-items: center;     /* vertical centering if div has height */
+  height: 50px;            /* optional, if you want vertical centering */
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.toggle-header {
+  margin-right:20px;
+  text-align: center;
+  font-weight: 600; /* tweak however you like */
+}
