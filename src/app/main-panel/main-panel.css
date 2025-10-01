@@ -1,18 +1,33 @@
 .spacer {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
-.toggle-button {
-  display: flex;
-  justify-content: end; /* horizontal centering */
-  align-items: center;     /* vertical centering if div has height */
-  height: 50px;            /* optional, if you want vertical centering */
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
+.toggle-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: start;
+    margin-top: 100px;
+    margin-left: 8px;
+}   
 
 .toggle-header {
-  margin-right:20px;
+    margin-right:20px;
+    text-align: center;
+    font-weight: 600; /* tweak however you like */
+}
+
+.card-content {
+  display: flex;
+  /* gap: 16px; */
+  align-items: center;        /* make left and right same height */
+  justify-content: center;
+  flex: 1;                     /* fill remaining height of card */
+  overflow: hidden;            /* hide overflow so children handle scroll */
+}
+
+.select-prompt {
+  margin: 0 0 50px 0;
   text-align: center;
   font-weight: 600; /* tweak however you like */
 }

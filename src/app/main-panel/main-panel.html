@@ -13,28 +13,42 @@
 </mat-toolbar>
 
 <div class="toggle-container">
-    <div class="toggle-button">
-        <mat-button-toggle-group [(ngModel)]="reviewMode">
-            <mat-button-toggle value="learn">Learn</mat-button-toggle>
-            <mat-button-toggle value="review">Review</mat-button-toggle>
-        </mat-button-toggle-group>
-    </div>
-
-    <div class="toggle-button">
-        <mat-button-toggle-group [(ngModel)]="learningMode">
-            <mat-button-toggle value="read">Read</mat-button-toggle>
-            <mat-button-toggle value="write">Write</mat-button-toggle>
-            <mat-button-toggle value="memorise">Memorise</mat-button-toggle>
-        </mat-button-toggle-group>
-    </div>
-
+    <mat-button-toggle-group [(ngModel)]="learningMode">
+        <mat-button-toggle value="read">Read</mat-button-toggle>
+        <mat-button-toggle value="write">Write</mat-button-toggle>
+        <mat-button-toggle value="memorise">Memorise</mat-button-toggle>
+    </mat-button-toggle-group>
+    <mat-checkbox [(ngModel)]="review">Review</mat-checkbox>
+</div>
+<div class="toggle-button">
+    
 </div>
 
 
-<app-reading-panel></app-reading-panel>
 
-<app-writing-panel></app-writing-panel>
+@if (learningMode == 'read') {
 
-<app-translation-panel></app-translation-panel>
+    <app-reading-panel></app-reading-panel>
+}
+@else if (learningMode == 'write') {
 
-<app-vocabulary-panel></app-vocabulary-panel>
+    <app-writing-panel></app-writing-panel>
+
+    <app-translation-panel></app-translation-panel>
+}
+@else if (learningMode == 'memorise') {
+
+    <app-vocabulary-panel></app-vocabulary-panel>
+}
+@else {
+
+    <mat-card class="panel-card">
+        <div class="card-content">
+            <h2 class="select-prompt">Select a learning mode!</h2>
+        </div>
+        
+    </mat-card>
+}
+
+
+

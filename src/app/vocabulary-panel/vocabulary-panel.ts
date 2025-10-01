@@ -1,12 +1,14 @@
 import { Component, Input } from '@angular/core';
 
+import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+
 import { VocabularyColumn } from "../vocabulary-column/vocabulary-column";
 
 @Component({
   selector: 'app-vocabulary-panel',
-  imports: [MatDividerModule, MatListModule, VocabularyColumn],
+  imports: [MatCardModule, MatDividerModule, MatListModule, VocabularyColumn],
   templateUrl: './vocabulary-panel.html',
   styleUrl: './vocabulary-panel.css'
 })

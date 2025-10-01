@@ -34,7 +34,7 @@ body {
   margin: 0;
 }
 
-.toggle-button {
+.toggle-container {
   @include mat.button-toggle-overrides((
     shape: 4px,
   ));
