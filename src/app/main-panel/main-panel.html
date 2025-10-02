@@ -12,30 +12,6 @@
     </button>
 </mat-toolbar>
 
-
-
-<!-- <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
-    @if (showFiller) {
-      <p>Lorem, ipsum dolor sit amet consectetur.</p>
-    }
-    <button (click)="showFiller = !showFiller" matButton="elevated">
-      Toggle extra text
-    </button>
-  </mat-drawer>
-
-  
-
-</mat-drawer-container> -->
-
-<!-- <div class="example-sidenav-content">
-    <button type="button" matButton (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
-</div> -->
-
-
 <div class="toggle-container">
     <mat-button-toggle-group [(ngModel)]="learningMode">
         <mat-button-toggle value="read">Read</mat-button-toggle>
@@ -43,15 +19,74 @@
         <mat-button-toggle value="answer">Answer</mat-button-toggle>
         <mat-button-toggle value="memorise">Memorise</mat-button-toggle>
     </mat-button-toggle-group>
-    <mat-checkbox [(ngModel)]="review" (ngModelChange)="onReviewChange()">Review</mat-checkbox>
 </div>
 
 <mat-card class="panel-card">
-    <mat-drawer-container class="main-panel-container">
+    <mat-drawer-container>
         <mat-drawer #drawer mode="side" class="side-nav">
+            
+            <div class="side-nav-inner">
+                <div class="mode-buttons">
+                    <div class="mode-option" (click)="create = true">
+                        <button mat-icon-button>
+                            <mat-icon>add_circle</mat-icon>
+                        </button>
+                        <span>Create</span>
+                    </div>
 
+                    <div class="mode-option" (click)="create = false">
+                        <button mat-icon-button>
+                            <mat-icon>history</mat-icon>
+                        </button>
+                        <span>Review</span>
+                    </div>
+                </div>
+
+                @if (create) {
+                    <mat-form-field>
+                        <mat-label>Topic</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                        <mat-form-field>
+                        <mat-label>Level</mat-label>
+                        <mat-select>
+                            <mat-option value="a1">A1</mat-option>
+                            <mat-option value="a2">A2</mat-option>
+                            <mat-option value="b1">B1</mat-option>
+                            <mat-option value="b2">B2</mat-option>
+                            <mat-option value="c1">C1</mat-option>
+                            <mat-option value="c2">C2</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <button matButton>Submit</button>
+                }
+                @else {
+                    <mat-list>
+                        @for (entry of reviewEntries; track $index) {
+                            <mat-list-item>
+                                <span class="menu-item" (click)="reviewEntryClick(entry, $event)">
+                                    <div>
+                                        {{ entry.name }}
+                                    </div>
+                                    <div>
+                                        {{ entry.date }}
+                                    </div>
+                                </span>
+                            </mat-list-item>
+                            @if ($index < reviewEntries.length - 1) {
+                                <mat-divider></mat-divider>
+                            }
+                        }
+                    </mat-list>
+                }
+            </div>
+            
         </mat-drawer>
+        
         <mat-drawer-content>
+            <button class="drawer-tab" mat-icon-button (click)="drawer.toggle()" [disableRipple]="true">
+                <mat-icon>{{ drawer.opened ? 'chevron_left' : 'chevron_right' }}</mat-icon>
+            </button>
             @if (learningMode == 'read') {
 
                 <app-reading-panel></app-reading-panel>
@@ -70,19 +105,13 @@
             }
             @else {
 
-                <mat-card class="panel-card">
-                    <div class="card-content">
-                        <h2 class="select-prompt">Select a learning mode!</h2>
-                    </div>
+                <div class="blank-content">
+                    <h2 class="select-prompt">Select a learning mode!</h2>
+                </div>
                     
-                </mat-card>
             }
-
-            
-
         </mat-drawer-content>
     </mat-drawer-container>
-
 </mat-card>
 
 
