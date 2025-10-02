@@ -1,22 +1,15 @@
-.reading-card {
-  padding: 16px;
-  height: 400px;           /* total card height */
-  box-sizing: border-box;
+.translation-panel-content {
   display: flex;
   flex-direction: column;
-  margin: 8px;
-}
-
-.card-content {
-  display: flex;
-  gap: 16px;
-  align-items: stretch;        /* make left and right same height */
-  flex: 1;                     /* fill remaining height of card */
-  overflow: hidden;            /* hide overflow so children handle scroll */
+  gap: 50px;
+  height: 900px;      /* or a fixed px/em value */
+  overflow: hidden;  /* prevents the parent itself from scrolling */
+  padding: 10px;
 }
 
 .text-area {
   flex: 1;                     /* fill remaining space */
+  height: 50%;
   display: flex;
   flex-wrap: wrap;
   overflow-y: auto;             /* scroll if content exceeds visible area */

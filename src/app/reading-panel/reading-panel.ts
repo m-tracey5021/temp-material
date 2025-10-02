@@ -21,6 +21,8 @@ export class ReadingPanel {
         var total = ex + ex + ex + ex + ex + ex + ex + ex;
 
         this.passage = total.split(/\s+/).filter(w => w);
+        this.toReview = total.split(/\s+/).filter(w => w);
+
     }
 
     onWordClick(word: string) {

@@ -1,29 +1,20 @@
-/* Outer card: fixed height for scrollable content */
-.reading-card {
-  padding: 16px;
-  max-height: 400px;           /* total card height */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  margin: 8px;
-}
-
 /* Flex container for side-by-side layout */
-.card-content {
+.reading-panel-content {
   display: flex;
-  gap: 16px;
-  align-items: stretch;        /* make left and right same height */
-  flex: 1;                     /* fill remaining height of card */
-  overflow: hidden;            /* hide overflow so children handle scroll */
+  gap: 10px;
+  height: 900px;      /* or a fixed px/em value */
+  overflow: hidden;  /* prevents the parent itself from scrolling */
+  padding: 10px;
 }
 
-/* Left text area: scrollable */
+/* Left area */
 .text-area {
-  flex: 1;                     /* fill remaining space */
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
-  overflow-y: auto;             /* scroll if content exceeds visible area */
-  padding-right: 4px;           /* optional spacing to avoid scrollbar overlap */
+  align-content: flex-start;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 /* Horizontal word styling */

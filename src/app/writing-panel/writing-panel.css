@@ -1,7 +1,10 @@
-.map-card {
-  margin-bottom: 16px;
-  padding: 8px;
-  margin: 8px;
+.writing-panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 900px;      /* or a fixed px/em value */
+  /* overflow: hidden;   */
+  padding: 10px;
 }
 
 .full-tile-textarea {

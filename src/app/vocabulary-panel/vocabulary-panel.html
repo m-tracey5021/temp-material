@@ -1,21 +1,18 @@
+<div class="vocab-panel-content">
+    <div class="horizontal-flex">
 
+        <div class="list-column-left">
+            <h3 class="column-header">Native</h3>
+            <app-vocabulary-column [column]="firstColumn"></app-vocabulary-column>
+        </div>
 
-<mat-card class="panel-card">
-    <div class="card-content">
-            <div class="horizontal-flex">
+        <div class="vertical-divider"></div>
 
-                <div class="list-column-left">
-                    <h3 class="column-header">Native</h3>
-                    <app-vocabulary-column [column]="firstColumn"></app-vocabulary-column>
-                </div>
+        <div class="list-column-right">
+            <h3 class="column-header">Target</h3>
+            <app-vocabulary-column [column]="secondColumn"></app-vocabulary-column>
+        </div>
 
-                <div class="vertical-divider"></div>
+    </div>  
+</div>
 
-                <div class="list-column-right">
-                    <h3 class="column-header">Target</h3>
-                    <app-vocabulary-column [column]="secondColumn"></app-vocabulary-column>
-                </div>
-
-            </div>  
-    </div>
-</mat-card>

@@ -7,6 +7,15 @@
   margin: 8px;
 }
 
+.vocab-panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 900px;      /* or a fixed px/em value */
+  overflow: hidden;  /* prevents the parent itself from scrolling */
+  padding: 10px;
+}
+
 .horizontal-flex {
   display: flex;
   flex-direction: row;

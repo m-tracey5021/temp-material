@@ -12,43 +12,81 @@
     </button>
 </mat-toolbar>
 
+
+
+<!-- <mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    @if (showFiller) {
+      <p>Lorem, ipsum dolor sit amet consectetur.</p>
+    }
+    <button (click)="showFiller = !showFiller" matButton="elevated">
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  
+
+</mat-drawer-container> -->
+
+<!-- <div class="example-sidenav-content">
+    <button type="button" matButton (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+</div> -->
+
+
 <div class="toggle-container">
     <mat-button-toggle-group [(ngModel)]="learningMode">
         <mat-button-toggle value="read">Read</mat-button-toggle>
         <mat-button-toggle value="write">Write</mat-button-toggle>
+        <mat-button-toggle value="answer">Answer</mat-button-toggle>
         <mat-button-toggle value="memorise">Memorise</mat-button-toggle>
     </mat-button-toggle-group>
-    <mat-checkbox [(ngModel)]="review">Review</mat-checkbox>
-</div>
-<div class="toggle-button">
-    
+    <mat-checkbox [(ngModel)]="review" (ngModelChange)="onReviewChange()">Review</mat-checkbox>
 </div>
 
+<mat-card class="panel-card">
+    <mat-drawer-container class="main-panel-container">
+        <mat-drawer #drawer mode="side" class="side-nav">
+
+        </mat-drawer>
+        <mat-drawer-content>
+            @if (learningMode == 'read') {
+
+                <app-reading-panel></app-reading-panel>
+            }
+            @else if (learningMode == 'write') {
+
+                <app-translation-panel></app-translation-panel>
+            }
+            @else if (learningMode == 'answer') {
+
+                <app-writing-panel></app-writing-panel>
+            }
+            @else if (learningMode == 'memorise') {
+
+                <app-vocabulary-panel></app-vocabulary-panel>
+            }
+            @else {
+
+                <mat-card class="panel-card">
+                    <div class="card-content">
+                        <h2 class="select-prompt">Select a learning mode!</h2>
+                    </div>
+                    
+                </mat-card>
+            }
+
+            
+
+        </mat-drawer-content>
+    </mat-drawer-container>
+
+</mat-card>
 
 
-@if (learningMode == 'read') {
 
-    <app-reading-panel></app-reading-panel>
-}
-@else if (learningMode == 'write') {
-
-    <app-writing-panel></app-writing-panel>
-
-    <app-translation-panel></app-translation-panel>
-}
-@else if (learningMode == 'memorise') {
-
-    <app-vocabulary-panel></app-vocabulary-panel>
-}
-@else {
-
-    <mat-card class="panel-card">
-        <div class="card-content">
-            <h2 class="select-prompt">Select a learning mode!</h2>
-        </div>
-        
-    </mat-card>
-}
 
 
 

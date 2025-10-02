@@ -1,26 +1,13 @@
-<mat-card class="panel-card">
-    <div class="card-content">
-    <!-- Left: horizontal text -->
-        <div class="text-area">
-            {{ toTranslate }}
-        </div>
-
-    
-  </div>
-</mat-card>
-
-<mat-card class="reading-card">
-    <div class="card-content">
-    <!-- Left: horizontal text -->
-        <div class="text-area">
-            <textarea
-                matInput
-                class="full-tile-textarea"
-                [(ngModel)]="translation"
-                >
-            </textarea>
-        </div>
-
-    
-  </div>
-</mat-card>
+<div class="translation-panel-content">
+    <div class="text-area">
+        {{ toTranslate }}
+    </div>
+    <div class="text-area">
+        <textarea
+            matInput
+            class="full-tile-textarea"
+            [(ngModel)]="translation"
+            >
+        </textarea>
+    </div>
+</div>

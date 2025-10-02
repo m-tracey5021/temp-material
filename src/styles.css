@@ -5,8 +5,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .panel-card {
     padding: 16px;
-    height: 900px;
-    max-height: 900px;           /* total card height */
+    /* height: 100px;
+    max-height: 900px;          */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
